@@ -9,7 +9,7 @@ set smartcase
 set nowrapscan
 set tabstop=4
 set softtabstop=4
-set shiftwidth=0  "when shiftwidth=0, use tabstop instead"
+set shiftwidth=4  "when shiftwidth=0, use tabstop instead"
 set expandtab
 autocmd FileType make setlocal noexpandtab
 set nocompatible
