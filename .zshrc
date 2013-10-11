@@ -59,22 +59,12 @@ elif type apt-get &> /dev/null; then
 fi
 
 alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
-alias rath='lud -r'
-alias cort='lud -c'
 #turn into a prog which can specify channels/recordings; run devilspie to keep aspect ratio
 alias tv='vlc ~/Videos/channels.xspf 2> /dev/null --no-playlist-autostart &'
 alias luvpn='sudo openconnect --user=dbc215 --authgroup=GeneralAccess sslvpn.lehigh.edu'
 alias viw='vim -R'
 alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias trash='gvfs-trash'
-
-#write as separate bash script and put in ~/.scripts/
-function boil() {
-    #take at most two operands: file extension and name for new file
-    #check if a template exists for extension
-    #copy template to current directory as filename+extension
-}
-
 
 man() {
 	env \
