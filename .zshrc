@@ -19,7 +19,6 @@ export CORRECT_IGNORE='_*'
 
 if [ $(hostname) != "arch" ]; then
     export PROMPT="%m$PROMPT"
-    export SPROMPT="%m$SPROMPT"
 fi
 
 export EDITOR="/usr/bin/vim -p"
