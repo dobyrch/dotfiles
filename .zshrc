@@ -12,7 +12,7 @@ autoload -U colors && colors
 compinit
 promptinit
 
-export PROMPT="%(?.%{$fg_no_bold[white]%}.%{$fg_no_bold[red]%})%# %{$reset_color%}"
+export PROMPT="%(?.%{$fg_no_bold[white]%}.%{$fg_no_bold[red]%})%(!.#.>)%{$reset_color%} "
 export SPROMPT="Correct $fg_no_bold[red]%R$reset_color to $fg_no_bold[green]%r$reset_color? "
 #export MOZ_DISABLE_PANGO=1
 export CORRECT_IGNORE='_*'
