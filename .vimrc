@@ -39,6 +39,6 @@ redir => s:wd
 silent pwd
 redir END
 let s:wd = substitute(s:wd, "^\\n\\+\\|\\n\\+$","","g")
-if filereadable('./.vimrc') && s:wd != expand('~') && s:wd != '/etc/vimrc'
+if expand('~') != '/root' && filereadable('./.vimrc') && s:wd != expand('~') && s:wd != '/etc/vimrc'
     source ./.vimrc
 endif
