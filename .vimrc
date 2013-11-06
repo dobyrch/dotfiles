@@ -17,6 +17,7 @@ set backspace=indent,eol,start
 set list
 set listchars=trail:.,tab:\ \ 
 set mouse=a
+set cryptmethod=blowfish
 cmap w!! w !sudo tee > /dev/null %
 noremap q: :q
 noremap <ScrollWheelUp> <C-Y>
