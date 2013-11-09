@@ -14,7 +14,6 @@ promptinit
 
 export PROMPT="%(?.%{$fg_no_bold[white]%}.%{$fg_no_bold[red]%})%(!.#.>)%{$reset_color%} "
 export SPROMPT="Correct $fg_no_bold[red]%R$reset_color to $fg_no_bold[green]%r$reset_color? "
-#export MOZ_DISABLE_PANGO=1
 export CORRECT_IGNORE='_*'
 
 if [ $(hostname) != "arch" ]; then
@@ -32,11 +31,17 @@ fi
 alias d='dirs'
 alias ls='ls --color=auto'
 alias ll='ls -Ahl'
+eval $(dircolors -b)
 alias grep='grep --color=auto'
 alias diff='colordiff'
-eval $(dircolors -b)
-alias sudo='sudo '
 alias sd='systemctl'
+alias sudo='sudo '
+alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
+alias tv='vlc ~/Videos/channels.xspf 2> /dev/null --no-playlist-autostart &'
+alias luvpn='sudo openconnect --user=dbc215 --authgroup=GeneralAccess sslvpn.lehigh.edu'
+alias viw='vim -R'
+alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
+alias trash='gvfs-trash'
 
 if type pacman &> /dev/null; then
     alias pacup='yaourt -Syua '       # Sync & upgrade
@@ -58,23 +63,15 @@ elif type apt-get &> /dev/null; then
     alias paccc='sudo apt-get autoclean '
 fi
 
-alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
-#turn into a prog which can specify channels/recordings; run devilspie to keep aspect ratio
-alias tv='vlc ~/Videos/channels.xspf 2> /dev/null --no-playlist-autostart &'
-alias luvpn='sudo openconnect --user=dbc215 --authgroup=GeneralAccess sslvpn.lehigh.edu'
-alias viw='vim -R'
-alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
-alias trash='gvfs-trash'
-
 man() {
-	env \
-        LESS_TERMCAP_md=$(printf "\e[1;32m") \
-        LESS_TERMCAP_me=$(printf "\e[0m") \
-        LESS_TERMCAP_se=$(printf "\e[0m") \
-        LESS_TERMCAP_so=$(printf "\e[0;47;30m") \
-        LESS_TERMCAP_ue=$(printf "\e[0m") \
-        LESS_TERMCAP_us=$(printf "\e[0;32m") \
-			man "$@"
+    env \
+    LESS_TERMCAP_md=$(printf "\e[1;32m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[0;47;30m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[0;32m") \
+    man "$@"
 }
 
 if [ "$TERM" = "linux" ]; then
@@ -102,7 +99,6 @@ fi
 typeset -A key
 
 key[Home]=${terminfo[khome]}
-
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
 key[Delete]=${terminfo[kdch1]}

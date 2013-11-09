@@ -4,6 +4,7 @@ set background=dark
 color solarized
 set autoindent
 set smartindent
+set display=lastline
 set ruler
 set number
 set ignorecase
@@ -17,7 +18,7 @@ autocmd FileType make setlocal noexpandtab
 set nocompatible
 set backspace=indent,eol,start
 set list
-set listchars=trail:.,tab:\ \ 
+"set listchars=trail:.,tab:>\ 
 set mouse=a
 set cryptmethod=blowfish
 cmap w!! w !sudo tee > /dev/null %
@@ -41,9 +42,9 @@ noremap <Right> <NOP>
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
 autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 
 "Use a vimrc in the working directory for per-project configuration"
 redir => s:wd
