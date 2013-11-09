@@ -1,9 +1,11 @@
 syntax enable
+set t_Co=16
 set background=dark
 color solarized
 set autoindent
 set smartindent
 set ruler
+set number
 set ignorecase
 set smartcase
 set nowrapscan

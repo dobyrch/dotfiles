@@ -36,6 +36,7 @@ alias grep='grep --color=auto'
 alias diff='colordiff'
 eval $(dircolors -b)
 alias sudo='sudo '
+alias sd='systemctl'
 
 if type pacman &> /dev/null; then
     alias pacup='yaourt -Syua '       # Sync & upgrade
@@ -77,7 +78,7 @@ man() {
 }
 
 if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P0073642" # Black
+    #echo -en "\e]P0073642" # Black
     echo -en "\e]P1dc322f" # Red
     echo -en "\e]P2859900" # Green
     echo -en "\e]P3b58900" # Yellow
