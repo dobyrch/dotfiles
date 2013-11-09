@@ -18,7 +18,7 @@ autocmd FileType make setlocal noexpandtab
 set nocompatible
 set backspace=indent,eol,start
 set list
-"set listchars=trail:.,tab:>\ 
+set listchars=trail:\ ,tab:\ \ 
 set mouse=a
 set cryptmethod=blowfish
 cmap w!! w !sudo tee > /dev/null %
