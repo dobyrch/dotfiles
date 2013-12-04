@@ -10,6 +10,7 @@ set number
 set ignorecase
 set smartcase
 set nowrapscan
+set nohlsearch
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4  "when shiftwidth=0, use tabstop instead"
