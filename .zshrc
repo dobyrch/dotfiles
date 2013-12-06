@@ -22,7 +22,11 @@ fi
 
 export EDITOR="/usr/bin/vim -p"
 export VISUAL="/usr/bin/vim -p"
-export PATH=$PATH:~/.scripts:.
+export PATH=$PATH:~/.scripts
+
+#Setup Go
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
 
 if [ -e /usr/share/doc/pkgfile/command-not-found.zsh ]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
@@ -42,6 +46,7 @@ alias luvpn='sudo openconnect --user=dbc215 --authgroup=GeneralAccess sslvpn.leh
 alias viw='vim -R'
 alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias trash='gvfs-trash'
+alias reconf='source ~/.zshrc'
 
 if type pacman &> /dev/null; then
     alias pacup='yaourt -Syua '       # Sync & upgrade
