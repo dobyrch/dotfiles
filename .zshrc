@@ -68,19 +68,16 @@ elif type apt-get &> /dev/null; then
     alias paccc='sudo apt-get autoclean '
 fi
 
-man() {
-    env \
-    LESS_TERMCAP_md=$(printf "\e[1;32m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[0;47;30m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[0;32m") \
-    man "$@"
-}
+# Colorize man pages
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[0;47;30m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[0;32m'
 
 if [ "$TERM" = "linux" ]; then
-    #echo -en "\e]P0073642" # Black
+#   echo -en "\e]P0073642" # Black
     echo -en "\e]P1dc322f" # Red
     echo -en "\e]P2859900" # Green
     echo -en "\e]P3b58900" # Yellow
@@ -96,7 +93,6 @@ if [ "$TERM" = "linux" ]; then
     echo -en "\e]PD6c71c4" # Bright Magenta
     echo -en "\e]PE93a1a1" # Bright Cyan
     echo -en "\e]PFfdf6e3" # Bright White
-    #clear # Clear artifacts
 fi
 
 # create a zkbd compatible hash;

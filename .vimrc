@@ -1,35 +1,48 @@
+set nocompatible
+
+" Enable colors
 syntax enable
 set t_Co=16
 set background=dark
 color solarized
-set autoindent
-set smartindent
-set display=lastline
+
+" Enable numbering
 set ruler
 set number
+set display=lastline
+
+" Enable preferred search options
 set ignorecase
 set smartcase
 set nowrapscan
 set nohlsearch
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4  "when shiftwidth=0, use tabstop instead"
-set expandtab
-autocmd FileType make setlocal noexpandtab
-set nocompatible
+
+" Enable preferred whitespace options
+set autoindent
+set smartindent
 set backspace=indent,eol,start
+
+" Show trailing whitespace and tabs
 set list
 set listchars=trail:\ ,tab:\ \ 
-set mouse=a
+
+" Enable strong encryption
 set cryptmethod=blowfish
-cmap w!! w !sudo tee > /dev/null %
-noremap q: :q
+
+" Enable mouse support
+set mouse=a
 noremap <ScrollWheelUp> <C-Y>
 noremap <ScrollWheelDown> <C-E>
-noremap <S-Up> <Up>
-noremap <S-Down> <Down>
-inoremap <S-Up> <Up>
-inoremap <S-Down> <Down>
+
+" Write file with elevated privileges
+cnoremap w!! w !sudo tee > /dev/null %
+
+" Disable commands I type accidentally
+noremap q: :q
+noremap q/ :q
+noremap q? :q
+
+" Disable arrow keys
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
@@ -39,19 +52,12 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" When editing a file, always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
+" Jump to the last known cursor position
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
 
-"Use a vimrc in the working directory for per-project configuration"
-redir => s:wd
-silent pwd
-redir END
-let s:wd = substitute(s:wd, "^\\n\\+\\|\\n\\+$","","g")
-if expand('~') != '/root' && filereadable('./.vimrc') && s:wd != expand('~') && s:wd != '/etc/vimrc'
-    source ./.vimrc
-endif
+" Use the vimrc in the working directory
+set exrc
+set secure
