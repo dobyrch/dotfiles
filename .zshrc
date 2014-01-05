@@ -20,8 +20,8 @@ if [ $(hostname) != "arch" ]; then
     export PROMPT="%m$PROMPT"
 fi
 
-export EDITOR="/usr/bin/vim -p"
-export VISUAL="/usr/bin/vim -p"
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
 export PATH=$PATH:~/.scripts
 
 #Setup Go
@@ -32,12 +32,11 @@ if [ -e /usr/share/doc/pkgfile/command-not-found.zsh ]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
 
-alias d='dirs'
-alias ls='ls --color=auto'
 alias ll='ls -Ahl'
 eval $(dircolors -b)
-alias grep='grep --color=auto'
+alias grep='grep --color=always'
 alias diff='colordiff'
+alias less='less -R'
 alias sd='systemctl'
 alias sudo='sudo '
 alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
@@ -48,15 +47,15 @@ alias trash='gvfs-trash'
 alias reconf='source ~/.zshrc'
 
 if type pacman &> /dev/null; then
-    alias pacup='yaourt -Syua '       # Sync & upgrade
-    alias pacin='yaourt -S '          # Install package
-    alias paclo='yaourt -U '          # Install local package
-    alias pacrm='yaourt -Rns '        # Purge package
-    alias pacsr='pacman -Ss '         # Search official repos
-    alias pacsa='yaourt -Ss '         # Search repos & AUR
-    alias pacro='yaourt -Qtd '        # Remove orphans
-    alias pacls='yaourt -Qet '        # List installed packages
-    alias paccc='yaourt -Sc '         # Clean cache
+    alias pacup='yaourt -Syua '
+    alias pacin='yaourt -S '
+    alias paclo='pacman -U '
+    alias pacrm='yaourt -Rns '
+    alias pacsr='pacman -Ss '
+    alias pacsa='yaourt -Ss '
+    alias pacro='yaourt -Qtd '
+    alias pacls='yaourt -Qet '
+    alias paccc='yaourt -Sc '
 elif type apt-get &> /dev/null; then
     alias pacup='sudo apt-get upgrade '
     alias pacin='sudo apt-get install '
