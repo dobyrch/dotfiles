@@ -32,6 +32,7 @@ if [ -e /usr/share/doc/pkgfile/command-not-found.zsh ]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
 
+alias ls='ls --color=always'
 alias ll='ls -Ahl'
 eval $(dircolors -b)
 alias grep='grep --color=always'
@@ -40,7 +41,7 @@ alias less='less -R'
 alias sd='systemctl'
 alias sudo='sudo '
 alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
-alias tv='vlc ~/Videos/channels.xspf 2> /dev/null --no-playlist-autostart &'
+alias tv='nohup vlc ~/Videos/channels.xspf --no-playlist-autostart &>/dev/null &'
 alias viw='vim -R'
 alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias trash='gvfs-trash'
