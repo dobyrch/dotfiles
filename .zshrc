@@ -46,6 +46,7 @@ alias viw='vim -R'
 alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias trash='gvfs-trash'
 alias reconf='source ~/.zshrc'
+alias todo='grep -nr "TODO" *'
 
 if type pacman &> /dev/null; then
     alias pacup='yaourt -Syua '
