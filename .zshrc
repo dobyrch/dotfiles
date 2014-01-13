@@ -25,7 +25,7 @@ export VISUAL="/usr/bin/vim"
 export PATH=$PATH:~/.scripts
 
 #Setup Go
-export GOPATH=~/go
+export GOPATH=~/Programs/go
 export PATH=$PATH:$GOPATH/bin
 
 if [ -e /usr/share/doc/pkgfile/command-not-found.zsh ]; then
@@ -41,7 +41,7 @@ alias less='less -R'
 alias sd='systemctl'
 alias sudo='sudo '
 alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
-alias tv='nohup vlc ~/Videos/channels.xspf --no-playlist-autostart &>/dev/null &'
+alias tv='vlc ~/Videos/channels.xspf --no-playlist-autostart 2>/dev/null &'
 alias viw='vim -R'
 alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias trash='gvfs-trash'
@@ -51,7 +51,7 @@ alias todo='grep -nr "TODO" *'
 if type pacman &> /dev/null; then
     alias pacup='yaourt -Syua '
     alias pacin='yaourt -S '
-    alias paclo='pacman -U '
+    alias paclo='yaourt -U '
     alias pacrm='yaourt -Rns '
     alias pacsr='pacman -Ss '
     alias pacsa='yaourt -Ss '
