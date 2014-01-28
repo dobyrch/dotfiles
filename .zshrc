@@ -1,6 +1,4 @@
-###Organize and make general copy for use on other machines
 umask 077
-#setopt completealiases
 setopt correct
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_DUPS
@@ -16,37 +14,37 @@ export PROMPT="%(?.%{$fg_no_bold[white]%}.%{$fg_no_bold[red]%})%(!.#.>)%{$reset_
 export SPROMPT="Correct $fg_no_bold[red]%R$reset_color to $fg_no_bold[green]%r$reset_color? "
 export CORRECT_IGNORE='_*'
 
-if [ $(hostname) != "arch" ]; then
-    export PROMPT="%m$PROMPT"
+if [ $(hostname) != 'arch' ]; then
+    export PROMPT="%m${PROMPT}"
 fi
 
-export EDITOR="/usr/bin/vim"
-export VISUAL="/usr/bin/vim"
-export PATH=$PATH:~/.scripts
+export EDITOR='/usr/bin/vim'
+export VISUAL='/usr/bin/vim'
+export PATH="${PATH}:${HOME}/.scripts"
 
 #Setup Go
-export GOPATH=~/Programs/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH="${HOME}/Documents/go"
+export PATH="${PATH}:${GOPATH}/bin"
 
-if [ -e /usr/share/doc/pkgfile/command-not-found.zsh ]; then
-    source /usr/share/doc/pkgfile/command-not-found.zsh
+if [ -e '/usr/share/doc/pkgfile/command-not-found.zsh' ]; then
+    source '/usr/share/doc/pkgfile/command-not-found.zsh'
 fi
 
-alias ls='ls --color=always'
-alias ll='ls -Ahl'
 eval $(dircolors -b)
-alias grep='grep --color=always'
 alias diff='colordiff'
+alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | cc -x c - && ./a.out | aplay'
+alias grep='grep --color=always'
 alias less='less -R'
+alias ll='ls -Ahl'
+alias ls='ls --color=always'
+alias reconf="source ${HOME}/.zshrc"
+alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
 alias sudo='sudo '
-alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | gcc -x c - && ./a.out | aplay'
-alias tv='vlc ~/Videos/channels.xspf --no-playlist-autostart 2>/dev/null &'
-alias viw='vim -R'
-alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
-alias trash='gvfs-trash'
-alias reconf='source ~/.zshrc'
 alias todo='grep -nr "TODO" *'
+alias trash='gvfs-trash'
+alias tv="vlc ${HOME}/Videos/channels.xspf --no-playlist-autostart 2>/dev/null &"
+alias viw='vim -R'
 
 if type pacman &> /dev/null; then
     alias pacup='yaourt -Syua '
@@ -76,7 +74,7 @@ export LESS_TERMCAP_so=$'\e[0;47;30m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[0;32m'
 
-if [ "$TERM" = "linux" ]; then
+if [ "${TERM}" = "linux" ]; then
 #   echo -en "\e]P0073642" # Black
     echo -en "\e]P1dc322f" # Red
     echo -en "\e]P2859900" # Green

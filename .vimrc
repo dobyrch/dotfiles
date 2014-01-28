@@ -32,7 +32,7 @@ set nohlsearch
 set autoindent
 set smartindent
 set list
-set listchars=trail:█,tab:\ \ 
+set listchars=trail:█,tab:\—\ 
 set backspace=indent,eol,start
 
 "Write file with elevated privileges"
