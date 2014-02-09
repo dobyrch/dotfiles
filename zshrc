@@ -34,6 +34,7 @@ eval $(dircolors -b)
 alias diff='colordiff'
 alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | cc -x c - && ./a.out | aplay'
 alias grep='grep --color=always'
+alias info='info --vi-keys'
 alias less='less -R'
 alias ll='ls -Ahl'
 alias ls='ls --color=always'
