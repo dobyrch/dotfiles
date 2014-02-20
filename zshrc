@@ -20,11 +20,13 @@ fi
 
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
+export PAGER='less -i'
 export PATH="${PATH}:${HOME}/.scripts"
 
 #Setup Go
 export GOPATH="${HOME}/Documents/go"
 export PATH="${PATH}:${GOPATH}/bin"
+cdpath=("${GOPATH}/src/github.com/dobyrch")
 
 if [ -e '/usr/share/doc/pkgfile/command-not-found.zsh' ]; then
     source '/usr/share/doc/pkgfile/command-not-found.zsh'
@@ -35,7 +37,7 @@ alias diff='colordiff'
 alias dtb='echo "main(i){for(i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));}" | cc -x c - && ./a.out | aplay'
 alias grep='grep --color=always'
 alias info='info --vi-keys'
-alias less='less -R'
+alias less='less -Ri'
 alias ll='ls -Ahl'
 alias ls='ls --color=always'
 alias reconf="source ${HOME}/.zshrc"
