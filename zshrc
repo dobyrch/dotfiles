@@ -48,6 +48,7 @@ alias todo='grep -nr "TODO" *'
 alias trash='gvfs-trash'
 alias tv="vlc ${HOME}/Videos/channels.xspf --no-playlist-autostart 2>/dev/null &"
 alias viw='vim -R'
+alias weather='telnet rainmaker.wunderground.com 3000'
 
 if type pacman &> /dev/null; then
     alias pacup='yaourt -Syua '
