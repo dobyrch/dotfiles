@@ -26,7 +26,6 @@ export PATH="${PATH}:${HOME}/.scripts"
 #Setup Go
 export GOPATH="${HOME}/Documents/go"
 export PATH="${PATH}:${GOPATH}/bin"
-cdpath=("${GOPATH}/src/github.com/dobyrch")
 
 if [ -e '/usr/share/doc/pkgfile/command-not-found.zsh' ]; then
     source '/usr/share/doc/pkgfile/command-not-found.zsh'
@@ -41,7 +40,7 @@ alias less='less -Ri'
 alias ll='ls -Ahl'
 alias ls='ls --color=always'
 alias reconf="source ${HOME}/.zshrc"
-alias reflect='sudo reflector --verbose -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
+alias reflect='sudo reflector -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
 alias sudo='sudo '
 alias todo='grep -nr "TODO" *'
@@ -51,7 +50,7 @@ alias viw='vim -R'
 alias weather='telnet rainmaker.wunderground.com 3000'
 
 if type pacman &> /dev/null; then
-    alias pacup='yaourt -Syua '
+    alias pacup='yaourt -Syu '
     alias pacin='yaourt -S '
     alias paclo='yaourt -U '
     alias pacrm='yaourt -Rns '
