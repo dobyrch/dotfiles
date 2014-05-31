@@ -42,6 +42,9 @@ cnoremap w!! w !sudo tee > /dev/null %
 set exrc
 set secure
 
+"Remove trailing whitespace"
+command! -range=% Trim <line1>,<line2>s/\s\+$
+
 "Jump to the last known cursor position"
 autocmd BufReadPost *
 	\ if line("'\"") > 0 && line("'\"") <= line("$") |
