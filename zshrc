@@ -43,10 +43,8 @@ alias reconf="source ${HOME}/.zshrc"
 alias reflect='sudo reflector -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
 alias sudo='sudo '
-alias todo='grep -nr "TODO" *'
+alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
 alias trash='gvfs-trash'
-alias tv="vlc ${HOME}/Videos/channels.xspf --no-playlist-autostart 2>/dev/null &"
-alias viw='vim -R'
 alias weather='telnet rainmaker.wunderground.com 3000'
 
 if type pacman &> /dev/null; then

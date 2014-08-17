@@ -15,7 +15,7 @@ set display=lastline,uhex
 set cryptmethod=blowfish
 
 "Mappings"
-set mouse=a
+set mouse=n
 noremap <ScrollWheelUp> <C-Y>
 noremap <ScrollWheelDown> <C-E>
 noremap q: :q
