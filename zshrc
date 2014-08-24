@@ -75,25 +75,6 @@ export LESS_TERMCAP_so=$'\e[0;47;30m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[0;32m'
 
-if [ "${TERM}" = "linux" ]; then
-#   echo -en "\e]P0073642" # Black
-    echo -en "\e]P1dc322f" # Red
-    echo -en "\e]P2859900" # Green
-    echo -en "\e]P3b58900" # Yellow
-    echo -en "\e]P4268bd2" # Blue
-    echo -en "\e]P5d33682" # Magenta
-    echo -en "\e]P62aa198" # Cyan
-    echo -en "\e]P7eee8d5" # White
-    echo -en "\e]P8002b36" # Bright Black
-    echo -en "\e]P9cb4b16" # Bright Red
-    echo -en "\e]PA586e75" # Bright Green
-    echo -en "\e]PB657b83" # Bright Yellow
-    echo -en "\e]PC839496" # Bright Blue
-    echo -en "\e]PD6c71c4" # Bright Magenta
-    echo -en "\e]PE93a1a1" # Bright Cyan
-    echo -en "\e]PFfdf6e3" # Bright White
-fi
-
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
