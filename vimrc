@@ -1,10 +1,14 @@
 set nocompatible
 
 "Color"
-syntax enable
+if !&diff | syntax enable | endif
 set t_Co=16
 set background=dark
 color solarized
+
+"Completion"
+set wildmenu
+set wildmode=longest,list,full
 
 "Display"
 set ruler
@@ -28,6 +32,9 @@ set smartcase
 set nowrapscan
 set nohlsearch
 
+"Tags"
+set tags=./tags;
+
 "Whitespace"
 set autoindent
 set smartindent
@@ -36,17 +43,20 @@ set listchars=trail:█,tab:\—\
 set backspace=indent,eol,start
 
 "Write file with elevated privileges"
-cnoremap w!! w !sudo tee > /dev/null %
+cnoremap w!! write !sudo tee % > /dev/null
 
 "Use the vimrc in the working directory"
 set exrc
 set secure
 
+"Split lines on delimiter"
+command! -range -nargs=1 Split <line1>,<line2>s/<args>/\r/g
+
 "Remove trailing whitespace"
-command! -range=% Trim <line1>,<line2>s/\s\+$
+command! -range=% Strip <line1>,<line2>s/\s\+$
 
 "Jump to the last known cursor position"
 autocmd BufReadPost *
-	\ if line("'\"") > 0 && line("'\"") <= line("$") |
-	\   exe "normal g`\"" |
-	\ endif
+\	if line("'\"") > 0 && line("'\"") <= line("$") |
+\		exe "normal g`\"" |
+\	endif
