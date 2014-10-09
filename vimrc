@@ -10,6 +10,10 @@ color solarized
 set wildmenu
 set wildmode=longest,list,full
 
+"Configuration"
+set exrc
+set secure
+
 "Display"
 set ruler
 set number
@@ -18,13 +22,10 @@ set display=lastline,uhex
 "Encryption"
 set cryptmethod=blowfish
 
-"Mappings"
+"Mouse"
 set mouse=n
 noremap <ScrollWheelUp> <C-Y>
 noremap <ScrollWheelDown> <C-E>
-noremap q: :q
-noremap q/ :q
-noremap q? :q
 
 "Search"
 set ignorecase
@@ -44,10 +45,6 @@ set backspace=indent,eol,start
 
 "Write file with elevated privileges"
 cnoremap w!! write !sudo tee % > /dev/null
-
-"Use the vimrc in the working directory"
-set exrc
-set secure
 
 "Split lines on delimiter"
 command! -range -nargs=1 Split <line1>,<line2>s/<args>/\r/g
