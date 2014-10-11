@@ -25,7 +25,7 @@ export LESS_TERMCAP_us=$'\e[0;32m'
 export LESS_TERMCAP_ue=$'\e[0m'
 
 eval $(dircolors -b)
-alias du='du --max-depth=1 -h | sort -h'
+alias du='du --max-depth=1 -h'
 alias ls='ls --color=always'
 alias ll='ls -Ahl'
 alias grep='grep --color=always'
@@ -35,6 +35,7 @@ alias trash='gvfs-trash'
 alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
 alias reflect='sudo reflector -p http -l 20 --sort rate --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
+alias sudo='sudo '
 
 if type pacman &> /dev/null; then
 	alias pacup='sudo pacman -Syu'
