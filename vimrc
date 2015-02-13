@@ -20,7 +20,7 @@ set number
 set display=lastline,uhex
 
 "Encryption"
-set cryptmethod=blowfish
+set cryptmethod=blowfish2
 
 "Mouse"
 set mouse=n
