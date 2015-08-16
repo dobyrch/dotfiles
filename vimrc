@@ -1,4 +1,7 @@
 set nocompatible
+filetype plugin on
+runtime ftplugin/man.vim
+map K \K
 
 "Color"
 if !&diff | syntax enable | endif
@@ -23,10 +26,12 @@ set display=lastline,uhex
 set cryptmethod=blowfish2
 
 "Mouse"
-set mouse=n
+set mouse=a
 set clipboard=unnamedplus
 noremap <ScrollWheelUp> <C-Y>
 noremap <ScrollWheelDown> <C-E>
+noremap <C-H> gT
+noremap <C-L> gt
 
 "Search"
 set ignorecase
@@ -52,6 +57,9 @@ command! -range -nargs=1 Split <line1>,<line2>s/<args>/\r/g
 
 "Remove trailing whitespace"
 command! -range=% Strip <line1>,<line2>s/\s\+$
+
+"Run make and open quickfix window"
+command! -nargs=* Make wall | silent make <args> | redraw! | cwindow
 
 "Jump to the last known cursor position"
 autocmd BufReadPost *
