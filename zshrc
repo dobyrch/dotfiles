@@ -12,10 +12,11 @@ export PROMPT="%(?.%{${fg_no_bold[white]}%}.%{${fg_no_bold[red]}%})%(!.#.>)%{${r
 export SPROMPT="Correct ${fg_no_bold[red]}%R${reset_color} to ${fg_no_bold[green]}%r${reset_color}? "
 export CORRECT_IGNORE='_*'
 
-export PATH="${PATH}:${HOME}/.scripts"
+export PATH="${PATH}:${HOME}/.local/bin"
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
 export PAGER='less -i'
+bindkey -v
 
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
