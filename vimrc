@@ -5,7 +5,7 @@ map K \K
 
 "Color"
 if !&diff | syntax enable | endif
-set t_Co=16
+if &term == 'linux' | set t_Co=8 | endif
 set background=dark
 color solarized
 
@@ -20,7 +20,7 @@ set secure
 "Display"
 set ruler
 set number
-set display=lastline,uhex
+set display=lastline
 
 "Encryption"
 set cryptmethod=blowfish2
@@ -66,3 +66,13 @@ autocmd BufReadPost *
 \	if line("'\"") > 0 && line("'\"") <= line("$")
 \|		exe "normal g`\""
 \|	endif
+
+"Show output of external command in new window"
+function! RunCmd(cmd)
+	new
+	set buftype=nofile
+	execute 'read !' a:cmd
+	1 delete
+	filetype detect
+endfunction
+command! -nargs=+ Run call RunCmd(<q-args>)
