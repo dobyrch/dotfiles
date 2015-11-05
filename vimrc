@@ -1,7 +1,4 @@
 set nocompatible
-filetype plugin on
-runtime ftplugin/man.vim
-map K \K
 
 "Color"
 if !&diff | syntax enable | endif
@@ -25,13 +22,16 @@ set display=lastline
 "Encryption"
 set cryptmethod=blowfish2
 
+"Keywords"
+filetype plugin on
+runtime ftplugin/man.vim
+map K \K
+
 "Mouse"
 set mouse=a
 set clipboard=unnamedplus
-noremap <ScrollWheelUp> <C-Y>
-noremap <ScrollWheelDown> <C-E>
-noremap <C-H> gT
-noremap <C-L> gt
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 "Search"
 set ignorecase
@@ -48,9 +48,15 @@ set smartindent
 set list
 set listchars=trail:█,tab:\—\ 
 set backspace=indent,eol,start
+set virtualedit=all
+
+"Windows"
+set splitright
+map <C-H> gT
+map <C-L> gt
 
 "Write file with elevated privileges"
-cnoremap w!! write !sudo tee % > /dev/null
+cmap w!! write !sudo tee % > /dev/null
 
 "Split lines on delimiter"
 command! -range -nargs=1 Split <line1>,<line2>s/<args>/\r/g
@@ -62,10 +68,12 @@ command! -range=% Strip <line1>,<line2>s/\s\+$
 command! -nargs=* Make wall | silent make <args> | redraw! | cwindow
 
 "Jump to the last known cursor position"
-autocmd BufReadPost *
-\	if line("'\"") > 0 && line("'\"") <= line("$")
-\|		exe "normal g`\""
-\|	endif
+function! RestoreCursor()
+	if line("'\"") > 0 && line("'\"") <= line("$")
+		normal g`"zz
+	endif
+endfunction
+autocmd BufReadPost * call RestoreCursor()
 
 "Show output of external command in new window"
 function! RunCmd(cmd)
