@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+#&> /dev/null exec gnome-session
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+fcitx -D &
+
+xrdb ~/.config/X11/Xresources
+setxkbmap -option ctrl:nocaps &
+xsetroot -cursor_name left_ptr &
+feh --no-fehbg --bg-scale ~/Pictures/wallpapers/pixel.jpg &
+urxvtd &
+sxhkd &
+exec bspwm
