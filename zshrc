@@ -1,22 +1,29 @@
-umask 077
 setopt CORRECT
 setopt AUTO_PUSHD
 setopt PUSHD_SILENT
 setopt PUSHD_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt SHARE_HISTORY
+setopt EXTENDED_GLOB
 autoload compinit && compinit
 autoload colors && colors
+autoload zmv
+
+greet
 
 export PROMPT="%(?.%{${fg_no_bold[white]}%}.%{${fg_no_bold[red]}%})%(!.#.>)%{${reset_color}%} "
 export SPROMPT="Correct ${fg_no_bold[red]}%R${reset_color} to ${fg_no_bold[green]}%r${reset_color}? "
 export CORRECT_IGNORE='_*'
 
-export PATH="${PATH}:${HOME}/.local/bin"
+export HISTFILE="${HOME}/.cache/zsh/history"
+export SAVEHIST='100'
+
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
 export PAGER='less -i'
+
 bindkey -v
+bindkey '^?' backward-delete-char
 
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -26,15 +33,16 @@ export LESS_TERMCAP_us=$'\e[0;32m'
 export LESS_TERMCAP_ue=$'\e[0m'
 
 eval $(dircolors -b)
+alias ag='fg %-'
 alias du='du --max-depth=1 -h'
-alias ls='ls --color=always'
+alias grep='grep --color=auto'
+alias ls='ls -N --color=auto'
 alias ll='ls -Ahl'
-alias grep='grep --color=always'
 alias less='less -Ri'
 alias info='info --vi-keys'
 alias trash='gvfs-trash'
 alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
-alias reflect='sudo reflector -p http -l 20 --sort rate --save /etc/pacman.d/mirrorlist'
+alias reflect='sudo reflector -p http -l 4 --sort rate --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
 alias sudo='sudo '
 
