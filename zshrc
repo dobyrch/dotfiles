@@ -29,7 +29,7 @@ export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[0;47;30m'
 export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[0;32m'
+export LESS_TERMCAP_us=$'\e[1;35m'
 export LESS_TERMCAP_ue=$'\e[0m'
 
 eval $(dircolors -b)
