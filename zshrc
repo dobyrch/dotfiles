@@ -40,6 +40,7 @@ alias ls='ls -N --color=auto'
 alias ll='ls -Ahl'
 alias less='less -Ri'
 alias info='info --vi-keys'
+alias pdf="apvlv -c ${HOME}/.config/apvlv/apvlv.conf"
 alias trash='gvfs-trash'
 alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
 alias reflect='sudo reflector -p http -l 4 --sort rate --save /etc/pacman.d/mirrorlist'
