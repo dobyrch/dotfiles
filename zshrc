@@ -34,6 +34,7 @@ export LESS_TERMCAP_ue=$'\e[0m'
 
 eval $(dircolors -b)
 alias ag='fg %-'
+alias bmount='udisksctl mount -b'
 alias du='du --max-depth=1 -h'
 alias grep='grep --color=auto'
 alias ls='ls -N --color=auto'
@@ -45,6 +46,7 @@ alias trash='gvfs-trash'
 alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
 alias reflect='sudo reflector -p http -l 4 --sort rate --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
+alias setvol='pactl set-sink-input-volume'
 alias sudo='sudo '
 
 if type pacman &> /dev/null; then
