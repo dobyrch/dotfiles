@@ -48,7 +48,6 @@ set smartindent
 set list
 set listchars=trail:▒,tab:▉█
 set backspace=indent,eol,start
-set virtualedit=all
 
 "Windows"
 set splitright
