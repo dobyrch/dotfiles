@@ -152,3 +152,6 @@ F7
 #XF86MonBrightnessDown
 F6
 	brightness down
+
+F5
+	date_notify
