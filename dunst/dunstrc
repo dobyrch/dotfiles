@@ -11,7 +11,7 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = no
+    allow_markup = yes
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -142,10 +142,10 @@
     browser = /usr/bin/firefox -new-tab
 
     # Align icons left/right/off
-    icon_position = left
+    icon_position = right
 
     # Paths to default icons.
-    icon_folders =  /usr/share/icons/Faenza/actions/16:/usr/share/icons/Faenza/apps/16:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders =  /usr/share/icons/Faience/actions/48:/usr/share/icons/Faience/apps/48
 
 [frame]
     width = 2
