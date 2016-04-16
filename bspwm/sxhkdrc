@@ -145,8 +145,10 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	volume down
 
-XF86MonBrightnessUp
+#XF86MonBrightnessUp
+F7
 	brightness up
 
-XF86MonBrightnessDown
+#XF86MonBrightnessDown
+F6
 	brightness down
