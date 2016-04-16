@@ -24,4 +24,5 @@ xsetroot -cursor_name left_ptr &
 feh --no-fehbg --bg-scale ~/Pictures/wallpapers/pixel.jpg &
 urxvtd &
 sxhkd &
+checkupdates_notify &
 exec bspwm
