@@ -145,7 +145,7 @@
     icon_position = right
 
     # Paths to default icons.
-    icon_folders =  /usr/share/icons/Faience/actions/48:/usr/share/icons/Faience/apps/48
+    icon_folders =  /usr/share/icons/Faience/actions/48:/usr/share/icons/Faience/apps/48:/usr/share/icons/Faenza/devices/48
 
 [frame]
     width = 2
