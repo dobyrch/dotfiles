@@ -54,8 +54,14 @@ alt + ctrl + {x,y,z}
 # focus/swap
 #
 
+alt + p
+	bspc node -f @parent
+
 alt + v
 	bspc node -f @parent && bspc node -F horizontal && bspc node -f last
+
+alt + r
+	bspc node -f @parent && bspc node -R 90 && bspc node -f last
 
 # focus the node in the given direction
 alt + {ctrl,_} + {h,j,k,l}
