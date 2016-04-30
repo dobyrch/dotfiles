@@ -146,8 +146,14 @@ F6
 F7
 	brightness up
 
+F11
+	mpvc prev
+
+F12
+	mpvc next
+
 Print
 	screenshot
 
 Pause
-	pause
+	mpvc pause
