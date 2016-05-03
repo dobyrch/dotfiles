@@ -156,4 +156,4 @@ Print
 	screenshot
 
 Pause
-	mpvc pause
+	mpvc pause-toggle
