@@ -67,6 +67,21 @@ elif type apt-get &> /dev/null; then
 	alias pacsr='apt-cache search'
 fi
 
-if type pkgfile &> /dev/null; then
-	source '/usr/share/doc/pkgfile/command-not-found.zsh'
-fi
+command_not_found_handler() {
+	local pkg cmd="$1"
+
+	pkg=$(pkgfile -b -v -- "$cmd" 2>/dev/null |
+		head -n1 |
+		sed "s/^/${fg_bold[magenta]}/" |
+		sed "s:/:/${reset_color}:" |
+		sed "s/ / ${fg_bold[green]}/" |
+		sed "s/\t.*/${reset_color}/"
+	)
+
+	if [[ -n "$pkg" ]]; then
+		printf '%s may be found in ' "$cmd"
+		printf "%s\n" $pkg
+	fi
+
+	return 127
+}
