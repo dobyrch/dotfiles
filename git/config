@@ -1,0 +1,29 @@
+[user]
+	email = DouglasChristman@gmail.com
+	name = Doug Christman
+
+[push]
+	default = simple
+
+[rebase]
+	autoSquash = true
+
+[diff]
+	tool = vimdiff
+
+[difftool]
+	prompt = false
+
+[interactive]
+	diffFilter = /usr/share/git/diff-highlight/diff-highlight
+
+[pager]
+	diff = /usr/share/git/diff-highlight/diff-highlight | less -i
+	log = /usr/share/git/diff-highlight/diff-highlight | less -i
+	show = /usr/share/git/diff-highlight/diff-highlight | less -i
+
+[color "diff-highlight"]
+	oldNormal = yellow
+	newNormal = yellow
+	oldHighlight = red
+	newHighlight = blue
