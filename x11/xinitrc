@@ -18,10 +18,9 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx -D &
 
-xrdb ~/.config/x11/Xresources
-setxkbmap -option ctrl:nocaps &
+xrdb ~/.config/x11/Xresources &
 xsetroot -cursor_name left_ptr &
-feh --no-fehbg --bg-scale ~/Pictures/wallpapers/pixel.jpg &
+setbg &
 urxvtd &
 sxhkd &
 checkupdates_notify &
