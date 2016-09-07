@@ -125,6 +125,9 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	volume down
 
+XF86AudioMute
+	volume mute
+
 XF86ScreenSaver
 	lock_pixelate
 
@@ -138,7 +141,7 @@ XF86Suspend
 	systemctl hibernate
 
 XF86Display
-	date_notify
+	dock
 
 XF86MonBrightnessDown
 	brightness down
