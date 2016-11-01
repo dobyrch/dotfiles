@@ -11,7 +11,7 @@ super + BackSpace
 super + backslash
 	watchclip
 
-super + space
+super + d
 	dmenu_run -nf \#839496 -nb \#002b36 -sf \#eee8d5 -sb \#073642
 
 
@@ -95,10 +95,6 @@ super + shift + space
 #
 # pointer focus/move/resize
 #
-
-# focus
-~button1
-	bspc pointer -g focus
 
 # start move/resize
 super + button{1,3}
