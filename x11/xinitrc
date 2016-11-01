@@ -23,5 +23,6 @@ xsetroot -cursor_name left_ptr &
 setbg &
 urxvtd &
 sxhkd &
+compton --backend=glx -b &
 checkupdates_notify &
 exec bspwm
