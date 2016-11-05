@@ -1,6 +1,8 @@
 function autodeband(name, height)
-	mp.set_property_bool('deband', height < 600)
-	print(mp.get_property('deband'))
+	if height then
+		mp.set_property_bool('deband', height < 600)
+		print(mp.get_property('deband'))
+	end
 end
 
 mp.observe_property('height', 'number', autodeband)
