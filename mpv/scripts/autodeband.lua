@@ -1,8 +1,16 @@
-function autodeband(name, height)
-	if height then
-		mp.set_property_bool('deband', height < 600)
-		print(mp.get_property('deband'))
+function autodeband(property, dropped_frames)
+	if dropped_frames - baseline > 30 then
+		mp.set_property_bool('deband', false)
+		mp.unobserve_property(autodeband)
+		print 'disabled'
 	end
 end
 
-mp.observe_property('height', 'number', autodeband)
+function reset(property, deband)
+	if deband then
+		baseline = mp.get_property_number('vo-drop-frame-count') or 0
+		mp.observe_property('vo-drop-frame-count', 'number', autodeband)
+	end
+end
+
+mp.observe_property('deband', 'bool', reset)
