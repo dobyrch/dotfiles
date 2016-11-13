@@ -5,6 +5,7 @@ setopt PUSHD_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 setopt EXTENDED_GLOB
+setopt INTERACTIVE_COMMENTS
 autoload compinit && compinit
 autoload colors && colors
 autoload zmv
@@ -18,8 +19,9 @@ export CORRECT_IGNORE='_*'
 export HISTFILE="${HOME}/.cache/zsh/history"
 export SAVEHIST='100'
 
-export EDITOR='/usr/bin/vim'
-export VISUAL='/usr/bin/vim'
+alias vim=nvim
+export EDITOR='/usr/bin/nvim'
+export VISUAL='/usr/bin/nvim'
 export PAGER='less -i'
 
 bindkey -v
@@ -35,6 +37,7 @@ export LESS_TERMCAP_ue=$'\e[0m'
 eval $(dircolors -b)
 alias ag='fg %-'
 alias bmount='udisksctl mount -b'
+alias broken='find . -xtype l'
 alias du='du --max-depth=1 -h'
 alias ffmpeg='ffmpeg -hide_banner'
 alias grep='grep --color=auto'
@@ -81,6 +84,7 @@ command_not_found_handler() {
 	if [[ -n "$pkg" ]]; then
 		printf '%s may be found in ' "$cmd"
 		printf "%s\n" $pkg
+		return 0
 	fi
 
 	return 127
