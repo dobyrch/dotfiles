@@ -13,11 +13,14 @@ fi
 
 #&> /dev/null exec gnome-session
 
+export GALLIUM_HUD=fps
+export GALLIUM_HUD_VISIBLE=false
+export GALLIUM_HUD_TOGGLE_SIGNAL=10
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-fcitx -D &
 
+fcitx -D &
 xrdb ~/.config/x11/Xresources &
 xsetroot -cursor_name left_ptr &
 setbg &
