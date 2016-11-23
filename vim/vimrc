@@ -83,3 +83,5 @@ function! RunCmd(cmd)
 	filetype detect
 endfunction
 command! -nargs=+ Run call RunCmd(<q-args>)
+
+autocmd BufRead,BufNewFile *mutt-* setfiletype mail
