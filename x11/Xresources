@@ -4,8 +4,11 @@ urxvt.font: xft:GohuFont:pixelsize=14,\
             xft:WenQuanYi Bitmap Song:pixelsize=13
 urxvt.boldFont:
 
-urxvt.scrollBar: false
 urxvt.cursorBlink: true
+urxvt.scrollBar: false
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
 
 urxvt.perl-ext-common: default,matcher,clipboard
 urxvt.matcher.rend.0: Bold fg7
