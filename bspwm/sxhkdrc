@@ -8,9 +8,6 @@ super + Return
 super + BackSpace
 	firefox
 
-super + backslash
-	watchclip
-
 super + d
 	dmenu_run -nf \#839496 -nb \#002b36 -sf \#eee8d5 -sb \#073642
 
