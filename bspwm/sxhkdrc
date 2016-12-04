@@ -58,7 +58,7 @@ super + v
 	bspc node -f @parent && bspc node -F horizontal && bspc node -f last
 
 super + r
-	bspc node -f @parent && bspc node -R 90 && bspc node -f last
+	bspc node -f @parent && bspc node -R 270 && bspc node -f last
 
 # focus the node in the given direction
 super + {ctrl,_} + {h,j,k,l}
