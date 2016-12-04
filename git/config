@@ -8,6 +8,9 @@
 [rebase]
 	autoSquash = true
 
+[merge]
+	tool = vimdiff
+
 [diff]
 	tool = vimdiff
 
