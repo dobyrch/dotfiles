@@ -1,11 +1,11 @@
-setopt CORRECT
-setopt AUTO_PUSHD
-setopt PUSHD_SILENT
-setopt PUSHD_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt SHARE_HISTORY
-setopt EXTENDED_GLOB
-setopt INTERACTIVE_COMMENTS
+setopt correct
+setopt auto_pushd
+setopt pushd_silent
+setopt pushd_ignore_dups
+setopt hist_ignore_all_dups
+setopt share_history
+setopt extended_glob
+setopt interactive_comments
 autoload compinit && compinit
 autoload colors && colors
 autoload zmv
@@ -18,13 +18,16 @@ export CORRECT_IGNORE='_*'
 
 export HISTFILE="${HOME}/.cache/zsh/history"
 export SAVEHIST='100'
+export DIRSTACKSIZE='10'
 
 export EDITOR='/usr/bin/vim'
 export VISUAL='/usr/bin/vim'
 export PAGER='less -i'
 
 bindkey -v
-bindkey '^?' backward-delete-char
+autoload edit-command-line && zle -N edit-command-line
+bindkey -M vicmd '^W' edit-command-line
+bindkey -M viins '^W' edit-command-line
 
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -37,37 +40,26 @@ eval $(dircolors -b)
 alias ag='fg %-'
 alias bmount='udisksctl mount -b'
 alias broken='find . -xtype l'
+alias d='dirs -pv'
 alias du='du --max-depth=1 -h'
 alias ffmpeg='ffmpeg -hide_banner'
 alias grep='grep --color=auto'
-alias ls='ls -N --color=auto'
-alias ll='ls -Ahl'
-alias less='less -Ri'
 alias info='info --vi-keys'
-alias trash='gvfs-trash'
-alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
+alias less='less -Ri'
+alias ll='ls -Ahl'
+alias ls='ls -N --color=auto'
 alias reflect='sudo reflector -p http -l 20 -f 4 --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
 alias setvol='pactl set-sink-input-volume'
-alias sudo='sudo '
+alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
+alias trash='gvfs-trash'
 
-if type pacman &> /dev/null; then
-	alias pacup='sudo pacman -Syu'
-	alias pacin='sudo pacman -S'
-	alias pacrm='sudo pacman -Rns'
-	alias paccc='sudo pacman -Sc'
-	alias pacro='pacman -Qdt'
-	alias pacls='pacman -Qet'
-	alias pacsr='pacman -Ss'
-elif type apt-get &> /dev/null; then
-	alias pacup='sudo apt-get upgrade'
-	alias pacin='sudo apt-get install'
-	alias pacrm='sudo apt-get remove'
-	alias paccc='sudo apt-get autoclean'
-	alias pacro='sudo apt-get autoremove'
-	alias pacls='dpkg -l'
-	alias pacsr='apt-cache search'
-fi
+alias pacls='pacman -Qet'
+alias pacor='pacman -Qdt'
+alias pacsr='pacman -Ss'
+pacin() { sudo pacman -S   "${@}" && rehash }
+pacup() { sudo pacman -Syu "${@}" && rehash }
+pacrm() { sudo pacman -Rns "${@}" && rehash }
 
 command_not_found_handler() {
 	local pkg cmd="$1"
@@ -87,4 +79,14 @@ command_not_found_handler() {
 	fi
 
 	return 127
+}
+
+pd() {
+	local stack=( ${(f)"$(dirs -lp)"} )
+	shift stack
+
+	select dir in "${stack[@]}"; do
+		cd "${dir:-.}"
+		break
+	done
 }
