@@ -54,6 +54,9 @@ set splitright
 map <C-H> gT
 map <C-L> gt
 
+"Yank from cursor to end of line"
+map Y y$
+
 "Write file with elevated privileges"
 cmap w!! write !sudo tee % > /dev/null
 
@@ -66,14 +69,6 @@ command! -range=% Strip <line1>,<line2>s/\s\+$
 "Run make and open quickfix window"
 command! -nargs=* Make wall | silent make <args> | redraw! | cwindow
 
-"Jump to the last known cursor position"
-function! RestoreCursor()
-	if line("'\"") > 0 && line("'\"") <= line("$")
-		normal g`"zz
-	endif
-endfunction
-autocmd BufReadPost * call RestoreCursor()
-
 "Show output of external command in new window"
 function! RunCmd(cmd)
 	new
@@ -84,4 +79,36 @@ function! RunCmd(cmd)
 endfunction
 command! -nargs=+ Run call RunCmd(<q-args>)
 
+"Jump to the last known cursor position"
+function! RestoreCursor()
+	if line("'\"") > 0 && line("'\"") <= line("$")
+		normal g`"zz
+	endif
+endfunction
+autocmd BufReadPost * call RestoreCursor()
+
+"Edit binary files with vim -b"
+function! Hexify()
+	if &binary
+		silent %!xxd
+		set nomodified
+		if exists('s:hline')
+			call cursor(s:hline, s:hcol)
+		endif
+	endif
+endfunction
+
+function! Unhexify()
+	if &binary
+		let s:hline = line(".")
+		let s:hcol = col(".")
+		silent %!xxd -r
+	endif
+endfunction
+
+autocmd BufReadPost  * call Hexify()
+autocmd BufWritePre  * call Unhexify()
+autocmd BufWritePost * call Hexify()
+
+"Enable mail-related options when editing in mutt"
 autocmd BufRead,BufNewFile *mutt-* setfiletype mail
