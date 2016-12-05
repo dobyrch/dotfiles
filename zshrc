@@ -25,6 +25,7 @@ export VISUAL='/usr/bin/vim'
 export PAGER='less -i'
 
 bindkey -v
+bindkey '^?' backward-delete-char
 autoload edit-command-line && zle -N edit-command-line
 bindkey -M vicmd '^W' edit-command-line
 bindkey -M viins '^W' edit-command-line
@@ -51,6 +52,7 @@ alias ls='ls -N --color=auto'
 alias reflect='sudo reflector -p http -l 20 -f 4 --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
 alias setvol='pactl set-sink-input-volume'
+alias sudo='sudo '
 alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
 alias trash='gvfs-trash'
 
