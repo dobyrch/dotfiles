@@ -54,12 +54,14 @@ alias setvol='pactl set-sink-input-volume'
 alias todo='grep -nr "TODO" * | sed "s/\([^:]*TODO.*:\)\|\(\s*\*\/$\)/\x1B[0m/g"'
 alias trash='gvfs-trash'
 
+sudo_pacman() { sudo pacman "${@}" && rehash }
+compdef sudo_pacman=pacman
+alias pacup='sudo_pacman -Syu'
+alias pacin='sudo_pacman -S'
+alias pacrm='sudo_pacman -Rs'
 alias pacls='pacman -Qet'
 alias pacor='pacman -Qdt'
 alias pacsr='pacman -Ss'
-pacin() { sudo pacman -S   "${@}" && rehash }
-pacup() { sudo pacman -Syu "${@}" && rehash }
-pacrm() { sudo pacman -Rns "${@}" && rehash }
 
 command_not_found_handler() {
 	local pkg cmd="$1"
