@@ -10,10 +10,11 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 
-urxvt.perl-ext-common: default,matcher,clipboard
+urxvt.perl-ext-common: default,matcher,clipboard,keyboard-select
 urxvt.matcher.rend.0: Bold fg7
 urxvt.url-launcher: /usr/bin/firefox
 urxvt.matcher.button: C-1
 urxvt.keysym.C-S-C: perl:clipboard:copy
 urxvt.keysym.C-S-V: perl:clipboard:paste
+urxvt.keysym.C-s: perl:keyboard-select:activate
 urxvt.iso14755: false
