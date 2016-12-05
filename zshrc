@@ -19,9 +19,8 @@ export CORRECT_IGNORE='_*'
 export HISTFILE="${HOME}/.cache/zsh/history"
 export SAVEHIST='100'
 
-alias vim=nvim
-export EDITOR='/usr/bin/nvim'
-export VISUAL='/usr/bin/nvim'
+export EDITOR='/usr/bin/vim'
+export VISUAL='/usr/bin/vim'
 export PAGER='less -i'
 
 bindkey -v
