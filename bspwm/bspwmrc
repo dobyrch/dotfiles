@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-bspc config border_width 2
+bspc config border_width 4
 bspc config window_gap 20
 
 bspc config pointer_action1 resize_corner
