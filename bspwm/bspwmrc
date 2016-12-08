@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
 
+bspc rule -a Firefox focus=off
+
 bspc config border_width 4
 bspc config window_gap 20
 
