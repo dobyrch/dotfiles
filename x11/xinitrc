@@ -23,11 +23,9 @@ export XMODIFIERS=@im=fcitx
 fcitx -D &
 xrdb ~/.config/x11/Xresources &
 xsetroot -cursor_name left_ptr &
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
-setbg &
+xsetroot -solid '#061229' &
 urxvtd &
 sxhkd &
-compton -b &
+#compton -b &
 checkupdates_notify &
 exec bspwm

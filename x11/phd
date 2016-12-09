@@ -1,0 +1,56 @@
+#define S_base03        #061229
+#define S_base02        #1a2948
+#define S_base01        #4d5666
+#define S_base00        #717885
+#define S_base0         #9a99a3
+#define S_base1         #dbdde0
+#define S_base2         #b8bbc2
+#define S_base3         #ffffff
+
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+#define S_yellow        #fbd461
+#define S_orange        #f0a000
+#define S_red           #d07346
+#define S_magenta       #b08060
+#define S_violet        #9989cc
+#define S_blue          #5299bf
+#define S_cyan          #72b9bf
+#define S_green         #99bf52
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3

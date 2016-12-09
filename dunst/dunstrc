@@ -1,5 +1,5 @@
 [global]
-    font = DejaVuSansMono 10
+    font = GohuFont 14
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -21,7 +21,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = %s %b"
 
     # Sort messages by urgency.
     sort = yes
@@ -64,11 +64,11 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-20+20"
+    geometry = "0x1+0+0"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
@@ -109,7 +109,7 @@
     # The height of a single line.  If the height is smaller than the
     # font height, it will get raised to the font height.
     # This adds empty space above and under the text.
-    line_height = 0
+    line_height = 16
 
     # Draw a line of "separatpr_height" pixel height between two
     # notifications.
@@ -117,7 +117,7 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 0
 
     # Horizontal padding.
     horizontal_padding = 8
@@ -142,14 +142,14 @@
     browser = /usr/bin/firefox -new-tab
 
     # Align icons left/right/off
-    icon_position = right
+    icon_position = left
 
     # Paths to default icons.
-    icon_folders =  /usr/share/icons/Faience/actions/48:/usr/share/icons/Faience/apps/48:/usr/share/icons/Faenza/devices/48
+    icon_folders =  /usr/share/icons/Faience/actions/16:/usr/share/icons/Faience/apps/16:/usr/share/icons/Faience/devices/16:/usr/share/icons/Faience/status/16
 
 [frame]
-    width = 2
-    color = "#586e75"
+    width = 0
+    color = "#1a2948"
 
 [shortcuts]
 
@@ -175,18 +175,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#002b36"
-    foreground = "#839496"
+    background = "#061229"
+    foreground = "#9a99a3"
     timeout = 10
 
 [urgency_normal]
-    background = "#002b36"
-    foreground = "#b58900"
+    background = "#061229"
+    foreground = "#72b9bf"
     timeout = 10
 
 [urgency_critical]
-    background = "#002b36"
-    foreground = "#dc322f"
+    background = "#061229"
+    foreground = "#d07346"
     timeout = 0
 
 

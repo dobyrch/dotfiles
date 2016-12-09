@@ -9,7 +9,7 @@ super + BackSpace
 	firefox
 
 super + d
-	dmenu_run -nf \#839496 -nb \#002b36 -sf \#eee8d5 -sb \#073642
+	dmenu_run -b -fn GohuFont -nf \#9a99a3 -nb \#061229 -sf \#b8bbc2 -sb \#1a2948
 
 
 #
@@ -97,7 +97,7 @@ super + {minus,equal}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
 
 super + 0
-	bspc config -d focused window_gap 20
+	bspc config -d focused window_gap 16
 
 
 #

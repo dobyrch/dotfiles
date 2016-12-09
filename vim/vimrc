@@ -46,7 +46,7 @@ set tags=./tags;
 set autoindent
 set smartindent
 set list
-set listchars=trail:▒,tab:▉█
+set listchars=trail:▒,tab:│\ 
 set backspace=indent,eol,start
 
 "Windows"
