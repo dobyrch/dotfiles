@@ -86,10 +86,11 @@ command_not_found_handler() {
 }
 
 pd() {
-	local stack=( ${(f)"$(dirs -lp)"} )
+	local stack=( ${(f)"$(dirs -p)"} )
 	shift stack
 
 	select dir in "${stack[@]}"; do
+		dir="${dir/\~/${HOME}}"
 		cd "${dir:-.}"
 		break
 	done
