@@ -20,3 +20,11 @@ urxvt.keysym.C-s: perl:keyboard-select:activate
 urxvt.iso14755: false
 
 urxvt.internalBorder: 0
+
+xterm*termName: xterm-256color
+xterm*faceName: GohuFont:pixelsize=14
+xterm*faceNameDoublesize: WenQuanYi Bitmap Song:pixelsize=13
+xterm*allowBoldFonts: false
+xterm*forceBoxChars: true
+xterm*saveLines: 4096
+xterm*internalBorder: 0

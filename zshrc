@@ -25,6 +25,7 @@ export VISUAL='/usr/bin/vim'
 export PAGER='less -i'
 
 bindkey -v
+bindkey '^H' backward-delete-char
 bindkey '^?' backward-delete-char
 autoload edit-command-line && zle -N edit-command-line
 bindkey -M vicmd '^W' edit-command-line
