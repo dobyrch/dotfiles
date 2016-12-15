@@ -1,7 +1,9 @@
 #include "phd"
 
 urxvt.font: xft:GohuFont:pixelsize=14,\
-            xft:WenQuanYi Bitmap Song:pixelsize=13
+            xft:Fixed:style=Regular,\
+            xft:WenQuanYi Bitmap Song:pixelsize=13,\
+            xft:Fixed:style=ja
 urxvt.boldFont:
 
 urxvt.cursorBlink: true
