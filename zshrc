@@ -10,8 +10,6 @@ autoload compinit && compinit
 autoload colors && colors
 autoload zmv
 
-greet
-
 export PROMPT="%(?.%{${fg_no_bold[white]}%}.%{${fg_no_bold[red]}%})%(!.#.>)%{${reset_color}%} "
 export SPROMPT="Correct ${fg_no_bold[red]}%R${reset_color} to ${fg_no_bold[green]}%r${reset_color}? "
 export CORRECT_IGNORE='_*'
@@ -79,8 +77,9 @@ command_not_found_handler() {
 
 	if [[ -n "$pkg" ]]; then
 		printf '%s may be found in ' "$cmd"
-		printf "%s\n" $pkg
-		return 0
+		printf '%s\n' $pkg
+	else
+		printf 'command not found: %s\n' "$cmd"
 	fi
 
 	return 127
