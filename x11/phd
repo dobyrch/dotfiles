@@ -9,18 +9,19 @@
 
 *background:            S_base03
 *foreground:            S_base0
+xterm*background:       S_base02
 *fadeColor:             S_base03
 *cursorColor:           S_base1
 *pointerColorBackground:S_base01
 *pointerColorForeground:S_base1
 
 #define S_yellow        #fbd461
-#define S_orange        #f0a000
+#define S_orange        #cb4b16
 #define S_red           #d07346
-#define S_magenta       #b08060
+#define S_magenta       #b0809e
 #define S_violet        #9989cc
 #define S_blue          #5299bf
-#define S_cyan          #72b9bf
+#define S_cyan          #96bcbf
 #define S_green         #99bf52
 
 !! black dark/light
