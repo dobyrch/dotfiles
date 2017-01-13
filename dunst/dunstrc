@@ -181,7 +181,7 @@
 
 [urgency_normal]
     background = "#061229"
-    foreground = "#72b9bf"
+    foreground = "#9a99a3"
     timeout = 10
 
 [urgency_critical]
