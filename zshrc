@@ -2,24 +2,11 @@ setopt correct
 setopt auto_pushd
 setopt pushd_silent
 setopt pushd_ignore_dups
-setopt hist_ignore_all_dups
-setopt share_history
+setopt hist_find_no_dups
 setopt interactive_comments
 autoload compinit && compinit
 autoload colors && colors
 autoload zmv
-
-export PROMPT="%(?.%{${fg_no_bold[white]}%}.%{${fg_no_bold[red]}%})%(!.#.>)%{${reset_color}%} "
-export SPROMPT="Correct ${fg_no_bold[red]}%R${reset_color} to ${fg_no_bold[green]}%r${reset_color}? "
-export CORRECT_IGNORE='_*'
-
-export HISTFILE="${HOME}/.cache/zsh/history"
-export SAVEHIST='100'
-export DIRSTACKSIZE='10'
-
-export EDITOR='/usr/bin/vim'
-export VISUAL='/usr/bin/vim'
-export PAGER='less -i'
 
 bindkey -v
 bindkey '^H' backward-delete-char
@@ -27,6 +14,15 @@ bindkey '^?' backward-delete-char
 autoload edit-command-line && zle -N edit-command-line
 bindkey -M vicmd '^W' edit-command-line
 bindkey -M viins '^W' edit-command-line
+
+export PROMPT="%(?.%{${fg_no_bold[white]}%}.%{${fg_no_bold[red]}%})%(!.#.>)%{${reset_color}%} "
+export SPROMPT="Correct ${fg_no_bold[red]}%R${reset_color} to ${fg_no_bold[green]}%r${reset_color}? "
+export CORRECT_IGNORE='_*'
+export DIRSTACKSIZE='10'
+
+export EDITOR='/usr/bin/vim'
+export VISUAL='/usr/bin/vim'
+export PAGER='less -i'
 
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
