@@ -13,6 +13,8 @@ fi
 
 #&> /dev/null exec gnome-session
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 export GALLIUM_HUD=fps
 export GALLIUM_HUD_VISIBLE=false
 export GALLIUM_HUD_TOGGLE_SIGNAL=10
@@ -26,6 +28,6 @@ xsetroot -cursor_name left_ptr &
 xsetroot -solid '#061229' &
 urxvtd &
 sxhkd &
-#compton -b &
+setbg &
 checkupdates_notify &
 exec bspwm
