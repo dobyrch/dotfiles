@@ -8,8 +8,8 @@ end
 
 function reset(property, deband)
 	if deband then
-		baseline = mp.get_property_number('vo-drop-frame-count') or 0
-		mp.observe_property('vo-drop-frame-count', 'number', autodeband)
+		baseline = mp.get_property_number('frame-drop-count') or 0
+		mp.observe_property('frame-drop-count', 'number', autodeband)
 	end
 end
 
