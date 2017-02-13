@@ -2,6 +2,7 @@ setopt correct
 setopt auto_pushd
 setopt pushd_silent
 setopt pushd_ignore_dups
+setopt hist_ignore_all_dups
 setopt hist_find_no_dups
 setopt interactive_comments
 autoload compinit && compinit
@@ -43,7 +44,7 @@ alias info='info --vi-keys'
 alias less='less -Ri'
 alias ll='ls -Ahl'
 alias ls='ls -N --color=auto'
-alias reflect='sudo reflector -p http -l 20 -f 4 --save /etc/pacman.d/mirrorlist'
+alias reflect='sudo reflector -p https -l 20 -f 4 --save /etc/pacman.d/mirrorlist'
 alias sd='systemctl'
 alias setvol='pactl set-sink-input-volume'
 alias sudo='sudo '
