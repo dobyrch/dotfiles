@@ -8,6 +8,9 @@ super + Return
 super + BackSpace
 	firefox
 
+super + w
+	watchclip
+
 super + d
 	dmenu_run -b -fn Gohu\ GohuFont -nf \#9a99a3 -nb \#061229 -sf \#b8bbc2 -sb \#1a2948
 
@@ -25,7 +28,7 @@ super + Escape
 super + q
 	bspc node -c
 
-# superernate between the tiled and monocle layout
+# alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
