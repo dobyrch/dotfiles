@@ -3,6 +3,7 @@
 bspc rule -a Firefox focus=off
 bspc rule -a punes state=pseudo_tiled
 bspc rule -a mednafen state=pseudo_tiled
+bspc rule -a retroarch state=fullscreen
 
 bspc config border_width 4
 bspc config window_gap 16
