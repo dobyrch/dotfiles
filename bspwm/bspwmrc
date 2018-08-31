@@ -2,8 +2,9 @@
 
 bspc rule -a Firefox focus=off
 bspc rule -a punes state=pseudo_tiled
-bspc rule -a mednafen state=pseudo_tiled
-bspc rule -a retroarch state=fullscreen
+bspc rule -a retroarch state=fullscreen desktop=^1
+bspc rule -a Tix state=floating
+bspc rule -a Toplevel state=floating
 
 bspc config border_width 4
 bspc config window_gap 16
