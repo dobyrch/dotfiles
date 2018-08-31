@@ -7,6 +7,7 @@ setopt hist_find_no_dups
 setopt interactive_comments
 autoload compinit && compinit
 autoload colors && colors
+autoload zcalc
 autoload zmv
 
 bindkey -v
