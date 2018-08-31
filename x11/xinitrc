@@ -14,7 +14,10 @@ fi
 #&> /dev/null exec gnome-session
 
 export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+export _JAVA_OPTIONS='-Dswing.aatext=true
+	-Dawt.useSystemAAFontSettings=lcd
+	-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel
+	-Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export GALLIUM_HUD=fps
 export GALLIUM_HUD_VISIBLE=false
 export GALLIUM_HUD_TOGGLE_SIGNAL=10
