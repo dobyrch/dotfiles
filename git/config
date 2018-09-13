@@ -13,6 +13,8 @@
 
 [diff]
 	tool = vimdiff
+	colorMoved = plain
+	colorMovedWS = allow-indentation-change
 
 [difftool]
 	prompt = false
@@ -26,7 +28,13 @@
 	show = /usr/share/git/diff-highlight/diff-highlight | less -i
 
 [color "diff-highlight"]
-	oldNormal = yellow
-	newNormal = yellow
+	oldNormal = white
+	newNormal = white
 	oldHighlight = red
-	newHighlight = blue
+	newHighlight = green
+
+[color "diff"]
+	oldMoved = white
+	newMoved = bold cyan
+	meta = yellow
+	frag = blue
