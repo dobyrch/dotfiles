@@ -77,7 +77,7 @@ super + {_,ctrl + }bracket{left,right}
 
 # focus or send to the given desktop
 super + {_,ctrl + }{1-9}
-	bspc {desktop -f,node -d} '^{1-9}' 
+	bspc {desktop -f,node -d} '^{1-9}'
 
 #
 # preselect
@@ -136,15 +136,3 @@ XF86MonBrightnessDown
 
 XF86MonBrightnessUp
 	brightness up
-
-F11
-	mpvc prev
-
-F12
-	mpvc next
-
-Print
-	screenshot
-
-Pause
-	mpvc pause-toggle
