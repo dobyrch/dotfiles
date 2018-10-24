@@ -2,7 +2,7 @@ function autodeband(property, dropped_frames)
 	if dropped_frames and dropped_frames - baseline > 30 then
 		mp.set_property_bool('deband', false)
 		mp.unobserve_property(autodeband)
-		print 'disabled'
+		mp.msg.info('disabled')
 	end
 end
 
