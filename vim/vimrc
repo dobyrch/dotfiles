@@ -38,6 +38,7 @@ set ignorecase
 set smartcase
 set nowrapscan
 set nohlsearch
+set foldopen-=search
 
 "Tags"
 set tags=./tags;
