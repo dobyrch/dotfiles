@@ -14,6 +14,18 @@ super + w
 super + d
 	dmenu_run -b -fn Gohu\ GohuFont -nf \#9a99a3 -nb \#061229 -sf \#b8bbc2 -sb \#1a2948
 
+super + y
+	retro
+
+super + bracketleft
+	mpvc playlist-prev weak
+
+super + bracketright
+	mpvc playlist-next weak
+
+super + Pause
+	mpvc cycle pause
+
 
 #
 # bspwm hotkeys
@@ -70,10 +82,6 @@ super + {ctrl,_} + {h,j,k,l}
 # focus the next node
 super + n
 	bspc node -f next.local
-
-# focus the next/previous desktop
-super + {_,ctrl + }bracket{left,right}
-	bspc {desktop -f,node -d} {prev,next}
 
 # focus or send to the given desktop
 super + {_,ctrl + }{1-9}
