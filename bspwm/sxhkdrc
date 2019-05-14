@@ -12,7 +12,8 @@ super + w
 	watchclip
 
 super + d
-	dmenu_run -b -fn Gohu\ GohuFont -nf \#9a99a3 -nb \#061229 -sf \#b8bbc2 -sb \#1a2948
+	bspc rule -a URxvt -o state=floating sticky=on border=on; \
+	ONESHOT=1 urxvt -g 48x1 -b 16
 
 super + y
 	retro
@@ -22,6 +23,9 @@ super + bracketleft
 
 super + bracketright
 	mpvc playlist-next weak
+
+super + Print
+	screenshot
 
 super + Pause
 	mpvc cycle pause
