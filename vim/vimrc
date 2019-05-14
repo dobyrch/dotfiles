@@ -10,10 +10,6 @@ color solarized
 set wildmenu
 set wildmode=longest,list,full
 
-"Configuration"
-set exrc
-set secure
-
 "Display"
 set ruler
 set number
