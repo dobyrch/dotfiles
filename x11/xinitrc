@@ -32,5 +32,6 @@ xsetroot -solid '#061229' &
 urxvtd &
 sxhkd &
 setbg &
+unclutter -b --ignore-scrolling &
 checkupdates_notify &
 exec bspwm
