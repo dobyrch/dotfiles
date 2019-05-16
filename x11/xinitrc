@@ -33,5 +33,7 @@ urxvtd &
 sxhkd &
 setbg &
 unclutter -b --ignore-scrolling &
+redshift -l '25.07:121.52' &
 checkupdates_notify &
+battery_check &
 exec bspwm
