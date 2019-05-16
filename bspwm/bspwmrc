@@ -6,7 +6,8 @@ bspc rule -a retroarch state=fullscreen desktop=^1
 bspc rule -a Tix state=floating
 bspc rule -a Toplevel state=floating
 
-bspc config border_width 4
+bspc config border_width 3
+bspc config border_radius 4
 bspc config window_gap 16
 
 bspc config pointer_action1 resize_corner
@@ -17,7 +18,7 @@ bspc config borderless_monocle true
 bspc config gapless_monocle false
 bspc config click_to_focus true
 bspc config initial_polarity second_child
-bspc config external_rules_command "$(whence makerule)"
+bspc config external_rules_command =makerule
 bspc config remove_disabled_monitors
 
 bspc monitor -d I II III IV V VI VII VIII IX

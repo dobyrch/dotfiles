@@ -44,6 +44,9 @@ super + Escape
 super + q
 	bspc node -c
 
+super + c
+	bspc node -i; bspc node -c
+
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
