@@ -35,7 +35,6 @@ export LESS_TERMCAP_ue=$'\e[0m'
 
 eval $(dircolors -b)
 alias ag='fg %-'
-alias aurup='auracle download -r $(auracle sync -q)'
 alias bmount='udisksctl mount -b'
 alias broken='find . -xtype l'
 alias d='dirs -pv'
@@ -97,7 +96,7 @@ pd() {
 
 if [[ -v ONESHOT ]]; then
 	run_once() {
-		BUFFER="{ ${BUFFER} } &!; exit"
+		BUFFER="{ {${BUFFER}} || notify-send 'Command failed: ${BUFFER}' } &!; exit"
 		zle ".${WIDGET}" "${@}"
 	}
 
